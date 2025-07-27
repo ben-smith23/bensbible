@@ -1,0 +1,72 @@
+% ============================
+% PREAMBLE FOR JEFFERSON BIBLE
+% ============================
+
+% ---- Document Class ----
+\documentclass[twocolumn,12pt]{article}
+
+% ---- Fonts & Typography ----
+\usepackage{fontspec}
+\setmainfont{EB Garamond}[
+  Ligatures=TeX, % 'Historic' sometimes causes spacing issues
+  StylisticSet=1,
+  Numbers=OldStyle
+]
+\usepackage{microtype} % improves justification & kerning
+
+% ---- Drop Caps ----
+\usepackage{lettrine}
+\renewcommand{\LettrineTextFont}{\itshape}
+% Optional: Slightly adjust spacing for better 2-column balance
+\setlength{\DefaultNindent}{0.5em}
+\setlength{\headheight}{13.6pt}
+
+% ---- Decorative Headers & Footers ----
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small\scshape The Benjamin Bible}
+\fancyfoot[C]{\thepage}
+
+% ---- Ornaments ----
+\usepackage{pgfornament}
+\newcommand{\chapterornament}{%
+  \vspace{1em}
+  \begin{center}
+    \pgfornament[width=0.8\linewidth,color=black]{84}
+  \end{center}
+  \vspace{0.5em}
+}
+
+% ---- Sections Styling ----
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\scshape\large\centering}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\section}{0pt}{1.2em}{0.8em}
+
+% ---- Title Page Enhancements ----
+\usepackage{titling}
+\pretitle{\begin{center}\Huge\scshape}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\large}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}}
+
+% ---- Page Geometry ----
+\usepackage{geometry}
+\geometry{
+  paperwidth=6in,    % book-like format (adjust as needed)
+  paperheight=9in,
+  top=2cm,
+  bottom=2cm,
+  left=1.7cm,
+  right=1.7cm,
+  columnsep=20pt
+}
+
+% ---- Misc Enhancements ----
+\usepackage{parskip} % better spacing between paragraphs in 2-column mode
